@@ -20,8 +20,6 @@ class DBToDo {
     findAll() {
         const finded = this.ToDoList.find();
 
-        console.log(finded)
-
         return finded;
     }
 
