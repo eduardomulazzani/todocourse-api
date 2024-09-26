@@ -1,5 +1,5 @@
 const dbLocal = require("db-local");
-const { Schema } = new dbLocal({ path: "../databases" });
+const { Schema } = new dbLocal({ path: "./databases" });
 
 class DBToDo {
     constructor() {
@@ -19,6 +19,8 @@ class DBToDo {
 
     findAll() {
         const finded = this.ToDoList.find();
+
+        console.log(finded)
 
         return finded;
     }
