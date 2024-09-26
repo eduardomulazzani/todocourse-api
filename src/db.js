@@ -1,5 +1,5 @@
 const dbLocal = require("db-local");
-const { Schema } = new dbLocal({ path: "./databases" });
+const { Schema } = new dbLocal({ path: "../databases" });
 
 class DBToDo {
     constructor() {
