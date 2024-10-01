@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require("cors");
 const app = express()
 
 const DBToDo = require("./db.js");
@@ -6,6 +7,14 @@ const DBToDo = require("./db.js");
 const port = 3005;
 
 app.use(express.json());
+
+app.use((req, res, next) => {
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
+    
+    app.use(cors());
+    next();
+});
 
 app.get('/todo', (_, res) => {
     res.send(DBToDo.findAll());
